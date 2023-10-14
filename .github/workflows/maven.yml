@@ -10,12 +10,12 @@ name: Java CI with Maven
 
 on:
   push:
-    branches: [ "master" ]
+    branches: [ "master", "dev" ]
   pull_request:
     branches: [ "master" ]
   workflow_dispatch:
 env:
-  buildscript: pom.xml
+  buildScript: pom.xml
 jobs:
   build:
 
@@ -31,6 +31,6 @@ jobs:
         distribution: 'temurin'
         cache: maven
     - name: Build with Maven
-      run: "mvn -B $mavenGoal --file buildScript"
+      run: "mvn -B $mavenGoal --file $buildScript"
 
   
