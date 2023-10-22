@@ -18,10 +18,10 @@ env:
   mavenGoal: "clean install"
 jobs:
   build:
-env:
-  buildScript: "pom.xml" 
+
     runs-on: ubuntu-latest
-    
+ env:
+   buildScript: "pom.xml" 
     steps:
     - uses: actions/checkout@v3
     - name: Set up JDK 17
