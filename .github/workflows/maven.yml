@@ -14,10 +14,12 @@ on:
   pull_request:
     branches: [ "master" ]
   workflow_dispatch:
-
+env:
+  mavenGoal: "clean install"
 jobs:
   build:
-
+env:
+  buildScript: "pom.xml" 
     runs-on: ubuntu-latest
     
     steps:
